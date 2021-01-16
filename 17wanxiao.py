@@ -252,7 +252,7 @@ def check_in(username, password):
 
     if post_dict:
         # 第一类健康打卡
-        # print(post_dict)
+        print(post_dict)
 
         # 修改温度等参数
         # for j in post_dict['updatainfo']:  # 这里获取打卡json字段的打卡信息，微信推送的json字段
