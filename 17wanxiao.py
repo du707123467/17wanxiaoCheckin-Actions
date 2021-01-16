@@ -43,7 +43,7 @@ def get_post_json(jsons):
             continue
 
         if res['code'] != '10000':
-            # logging.warning(res)
+            logging.warning(res)
             return None
         data = json.loads(res['data'])
         # print(data)
@@ -62,7 +62,7 @@ def get_post_json(jsons):
             "checkbox": [{"description": i["decription"], "value": i["value"]} for i in
                          data['cusTemplateRelations']],
         }
-        # print(json.dumps(post_dict, sort_keys=True, indent=4, ensure_ascii=False))
+        print(json.dumps(post_dict, sort_keys=True, indent=4, ensure_ascii=False))
         logging.info('获取完美校园打卡post参数成功')
         return post_dict
     return None
@@ -252,7 +252,7 @@ def check_in(username, password):
 
     if post_dict:
         # 第一类健康打卡
-        print(post_dict)
+        logging.info(post_dict)
 
         # 修改温度等参数
         # for j in post_dict['updatainfo']:  # 这里获取打卡json字段的打卡信息，微信推送的json字段
